@@ -1,0 +1,18 @@
+{
+  "name": "Berkan Karayılmaz",
+  "title": "DevOps / SRE Engineer",
+  "summary": "8+ yıl deneyimli, Kubernetes, AWS ve CI/CD konularında uzman.",
+  "skills": ["Kubernetes", "AWS", "Golang", "Jenkins", "Linux", "Ansible", "Consul"],
+  "experience": [
+    {
+      "company": "Örnek Şirket A",
+      "position": "DevOps Engineer",
+      "years": "2022 - 2024"
+    },
+    {
+      "company": "Örnek Şirket B",
+      "position": "System Admin",
+      "years": "2018 - 2022"
+    }
+  ]
+}

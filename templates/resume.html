@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{.Name}} - Resume</title>
+</head>
+<body>
+    <h1>{{.Name}}</h1>
+    <h2>{{.Title}}</h2>
+    <p>{{.Summary}}</p>
+
+    <h3>Skills</h3>
+    <ul>
+        {{range .Skills}}<li>{{.}}</li>{{end}}
+    </ul>
+
+    <h3>Experience</h3>
+    <ul>
+        {{range .Experience}}
+            <li><strong>{{.Position}}</strong> at {{.Company}} ({{.Years}})</li>
+        {{end}}
+    </ul>
+</body>
+</html>
