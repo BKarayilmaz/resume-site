@@ -1,18 +1,51 @@
 {
   "name": "Berkan Karayılmaz",
-  "title": "DevOps / SRE Engineer",
-  "summary": "8+ yıl deneyimli, Kubernetes, AWS ve CI/CD konularında uzman.",
-  "skills": ["Kubernetes", "AWS", "Golang", "Jenkins", "Linux", "Ansible", "Consul"],
+  "title": "Software Support Engineer",
+  "location": "Istanbul, TR",
+  "email": "berkankarayilmaz@gmail.com",
+  "summary": "Experienced Software Support Engineer with expertise in Linux, SQL, and software development.",
+  "skills": ["Linux", "SQL", "GIT", "C#"],
+  "languages": ["Turkish", "English"],
+  "education": [
+    {
+      "degree": "Bachelor Degree",
+      "institution": "University Name",
+      "year": "2020",
+      "field": "Computer Science"
+    }
+  ],
   "experience": [
     {
-      "company": "Örnek Şirket A",
-      "position": "DevOps Engineer",
-      "years": "2022 - 2024"
+      "company": "Tech Company A",
+      "position": "Software Support Engineer",
+      "years": "2022 - Present",
+      "description": "Providing technical support for enterprise software solutions, troubleshooting system issues, and maintaining database systems."
     },
     {
-      "company": "Örnek Şirket B",
-      "position": "System Admin",
-      "years": "2018 - 2022"
+      "company": "IT Solutions B",
+      "position": "Junior Software Engineer",
+      "years": "2020 - 2022",
+      "description": "Developed and maintained software applications using C# and SQL Server."
+    }
+  ],
+  "certificates": [
+    {
+      "name": "Linux Professional Institute Certification",
+      "issuer": "LPI",
+      "year": "2023",
+      "credential_id": "LPI-123456"
+    },
+    {
+      "name": "Microsoft SQL Server Certification",
+      "issuer": "Microsoft",
+      "year": "2022",
+      "credential_id": "MS-789012"
+    },
+    {
+      "name": "Git Version Control System",
+      "issuer": "GitHub",
+      "year": "2021",
+      "credential_id": "GH-345678"
     }
   ]
 }

@@ -1,22 +1,25 @@
 # Base image
-FROM golang:1.21-alpine
+FROM golang:1.23-alpine
 
-# Create working path
+# Create working directory
 WORKDIR /app
 
-# Copy the necessary files
+# Copy go mod files first (for better caching)
 COPY go.mod ./
-COPY go.sum ./
+COPY go.su[m] ./
+
+# Download dependencies
 RUN go mod download
 
+# Copy source code
 COPY . .
 
-# Build 
+# Build the application
 RUN go build -o resume-app .
 
-# Port
+# Expose port
 EXPOSE 8080
 
-#Command
-CMD [ "./resume-app" ]
+# Run the application
+CMD ["./resume-app"]
 # https://hub.docker.com/_/golang

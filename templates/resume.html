@@ -1,23 +1,256 @@
 <!DOCTYPE html>
-<html>
+<html lang="tr">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{.Name}} - Resume</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+        
+        .container {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .header {
+            text-align: center;
+            border-bottom: 3px solid #2c3e50;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .header h1 {
+            margin: 0;
+            color: #2c3e50;
+            font-size: 2.5em;
+            font-weight: 300;
+        }
+        
+        .header h2 {
+            margin: 10px 0;
+            color: #34495e;
+            font-weight: 400;
+            font-size: 1.3em;
+        }
+        
+        .contact-info {
+            margin: 15px 0;
+            color: #7f8c8d;
+        }
+        
+        .contact-info span {
+            margin-right: 20px;
+        }
+        
+        .section {
+            margin-bottom: 30px;
+        }
+        
+        .section h3 {
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 5px;
+            margin-bottom: 15px;
+            font-size: 1.4em;
+        }
+        
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            list-style: none;
+            padding: 0;
+        }
+        
+        .skills-list li {
+            background: #3498db;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9em;
+        }
+        
+        .experience-item {
+            background: #ecf0f1;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            border-left: 4px solid #3498db;
+        }
+        
+        .experience-item h4 {
+            margin: 0 0 5px 0;
+            color: #2c3e50;
+        }
+        
+        .company {
+            color: #7f8c8d;
+            font-style: italic;
+        }
+        
+        .years {
+            color: #95a5a6;
+            font-size: 0.9em;
+        }
+        
+        .languages-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .languages-list li {
+            display: inline-block;
+            background: #27ae60;
+            color: white;
+            padding: 5px 12px;
+            border-radius: 15px;
+            margin-right: 10px;
+            font-size: 0.9em;
+        }
+        
+        .education {
+            background: #f39c12;
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: bold;
+        }
+        
+        .education-item {
+            background: #f39c12;
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            border-left: 4px solid #e67e22;
+        }
+        
+        .education-item h4 {
+            margin: 0 0 5px 0;
+            color: white;
+        }
+        
+        .institution {
+            color: #fdeaa7;
+            font-style: italic;
+        }
+        
+        .year, .field {
+            color: #fdcb6e;
+            font-size: 0.9em;
+        }
+        
+        .certificate-item {
+            background: #9b59b6;
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            border-left: 4px solid #8e44ad;
+        }
+        
+        .certificate-item h4 {
+            margin: 0 0 5px 0;
+            color: white;
+        }
+        
+        .issuer {
+            color: #dda0dd;
+            font-style: italic;
+        }
+        
+        .cert-year, .credential {
+            color: #c39bd3;
+            font-size: 0.9em;
+        }
+        
+        .description {
+            margin-top: 10px;
+            color: #2c3e50;
+            font-size: 0.95em;
+        }
+    </style>
 </head>
 <body>
-    <h1>{{.Name}}</h1>
-    <h2>{{.Title}}</h2>
-    <p>{{.Summary}}</p>
+    <div class="container">
+        <div class="header">
+            <h1>{{.Name}}</h1>
+            <h2>{{.Title}}</h2>
+            <div class="contact-info">
+                <span>📍 {{.Location}}</span>
+                <span>✉️ {{.Email}}</span>
+            </div>
+            {{if .Summary}}<p>{{.Summary}}</p>{{end}}
+        </div>
 
-    <h3>Skills</h3>
-    <ul>
-        {{range .Skills}}<li>{{.}}</li>{{end}}
-    </ul>
+        <div class="section">
+            <h3>🛠️ Skills</h3>
+            <ul class="skills-list">
+                {{range .Skills}}<li>{{.}}</li>{{end}}
+            </ul>
+        </div>
 
-    <h3>Experience</h3>
-    <ul>
-        {{range .Experience}}
-            <li><strong>{{.Position}}</strong> at {{.Company}} ({{.Years}})</li>
+        {{if .Languages}}
+        <div class="section">
+            <h3>🌍 Languages</h3>
+            <ul class="languages-list">
+                {{range .Languages}}<li>{{.}}</li>{{end}}
+            </ul>
+        </div>
         {{end}}
-    </ul>
+
+        {{if .Experience}}
+        <div class="section">
+            <h3>💼 Work Experience</h3>
+            {{range .Experience}}
+            <div class="experience-item">
+                <h4>{{.Position}}</h4>
+                <div class="company">{{.Company}}</div>
+                <div class="years">{{.Years}}</div>
+                {{if .Description}}<p class="description">{{.Description}}</p>{{end}}
+            </div>
+            {{end}}
+        </div>
+        {{end}}
+
+        {{if .Education}}
+        <div class="section">
+            <h3>🎓 Education</h3>
+            {{range .Education}}
+            <div class="education-item">
+                <h4>{{.Degree}}</h4>
+                <div class="institution">{{.Institution}}</div>
+                <div class="year">{{.Year}}</div>
+                {{if .Field}}<div class="field">{{.Field}}</div>{{end}}
+            </div>
+            {{end}}
+        </div>
+        {{end}}
+
+        {{if .Certificates}}
+        <div class="section">
+            <h3>🏆 Certificates</h3>
+            {{range .Certificates}}
+            <div class="certificate-item">
+                <h4>{{.Name}}</h4>
+                <div class="issuer">{{.Issuer}}</div>
+                <div class="cert-year">{{.Year}}</div>
+                {{if .CredentialId}}<div class="credential">ID: {{.CredentialId}}</div>{{end}}
+            </div>
+            {{end}}
+        </div>
+        {{end}}
+    </div>
 </body>
 </html>
